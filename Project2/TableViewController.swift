@@ -13,14 +13,13 @@ struct List {
 
 class TableViewController: UITableViewController {
     
-    var list: [List] = [List(title: "Wake up time")]
-
+    var list = [String]()
+    var isEmptyList = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "ListID")
-
-        
     }
 
     // MARK: - Table view data source
@@ -32,15 +31,25 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return list.count
+        
+        if list.count == 0 {
+            isEmptyList = true
+            return 1
+        } else {
+            return list.count
+        }
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListID", for: indexPath)
-
         
-
+        if (isEmptyList){
+            cell.textLabel?.text = "Your list is empty"
+        } else {
+            cell.textLabel?.text = list[indexPath.row]
+        }
+        
         return cell
     }
 
