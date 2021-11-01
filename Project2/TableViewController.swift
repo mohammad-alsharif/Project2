@@ -7,13 +7,18 @@
 
 import UIKit
 
-struct List {
-    var title: String = ""
+struct Task {
+    var list = [String]()
 }
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, AddListDelegate {
+    func addNewList(list: String) {
+        print("new list : \(list)")
+    }
+    
     
     var list = [String]()
+    
     var isEmptyList = false
     
     override func viewDidLoad() {
@@ -41,6 +46,13 @@ class TableViewController: UITableViewController {
     }
 
     
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete {
+            list.remove(at: indexPath.row)
+        }
+        tableView.reloadData()
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListID", for: indexPath)
         
@@ -52,6 +64,14 @@ class TableViewController: UITableViewController {
         
         return cell
     }
+    
+    @IBAction func Add(_ sender: UIBarButtonItem) {
+        let newList = storyboard?.instantiateViewController(withIdentifier: "newList") as! AddList
+        navigationController?.pushViewController(newList,animated: true)
+    }
+    
+    
+    
 
     /*
     // Override to support conditional editing of the table view.
