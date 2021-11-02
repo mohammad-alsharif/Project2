@@ -13,7 +13,7 @@ protocol AddListDelegate {
 }
 
 class AddList: UIViewController {
-    var list : Task!
+    var list : List!
     
     @IBOutlet weak var textField: UITextField!
     
@@ -26,6 +26,12 @@ class AddList: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    @IBAction func Create(_ sender: Any) {
+//        let TVC = storyboard?.instantiateViewController(withIdentifier: "newList") as! AddListDelegate
+//        TVC.delegate = self
+        list.items.append(Task(title: textField.text!))
+        navigationController?.popViewController(animated: true)
     }
     
 }

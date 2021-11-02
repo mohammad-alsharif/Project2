@@ -55,6 +55,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="nbJ-tY-sn1" kind="show" identifier="addSegue" id="elv-lA-vDL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fBO-oI-bgP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,15 +83,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BcX-Am-Jsz">
                                         <rect key="frame" x="20" y="94" width="250" height="31"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uzr-xL-UDs">
-                                                <rect key="frame" x="0.0" y="0.0" width="115" height="31"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="tinted" title="Cancel "/>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uQw-wF-Juf">
-                                                <rect key="frame" x="135" y="0.0" width="115" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="tinted" title="Add"/>
+                                                <connections>
+                                                    <action selector="Create:" destination="nbJ-tY-sn1" eventType="touchUpInside" id="6uc-7m-woT"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -105,7 +106,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add New List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwZ-p1-86Z">
-                                <rect key="frame" x="30" y="214" width="330" height="30"/>
+                                <rect key="frame" x="30" y="258" width="330" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
