@@ -17,15 +17,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYI-zQ-ugF">
-                        <rect key="frame" x="20" y="0.0" width="310" height="70"/>
+                        <rect key="frame" x="10" y="0.0" width="35" height="70"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="hYI-zQ-ugF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="7xt-ki-JeT"/>
-                    <constraint firstAttribute="trailing" secondItem="hYI-zQ-ugF" secondAttribute="trailing" id="Omx-5M-sa0"/>
+                    <constraint firstItem="hYI-zQ-ugF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="7xt-ki-JeT"/>
                     <constraint firstAttribute="bottom" secondItem="hYI-zQ-ugF" secondAttribute="bottom" id="iWe-Lq-PLF"/>
                     <constraint firstItem="hYI-zQ-ugF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="nNn-t1-tuC"/>
                 </constraints>

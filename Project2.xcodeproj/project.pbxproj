@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5A101F59272ED7CE009E17D4 /* AddList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A101F58272ED7CE009E17D4 /* AddList.swift */; };
+		5A101F772731B982009E17D4 /* UpdateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A101F762731B982009E17D4 /* UpdateList.swift */; };
 		5A393C19272C779E00BA7779 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A393C18272C779E00BA7779 /* AppDelegate.swift */; };
 		5A393C1B272C779E00BA7779 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A393C1A272C779E00BA7779 /* SceneDelegate.swift */; };
 		5A393C1D272C779E00BA7779 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A393C1C272C779E00BA7779 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		5A101F58272ED7CE009E17D4 /* AddList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddList.swift; sourceTree = "<group>"; };
+		5A101F762731B982009E17D4 /* UpdateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateList.swift; sourceTree = "<group>"; };
 		5A393C15272C779E00BA7779 /* Project2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A393C18272C779E00BA7779 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A393C1A272C779E00BA7779 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				5A393C1C272C779E00BA7779 /* ViewController.swift */,
 				5A4169CA272D4CAE00892FAD /* TableViewController.swift */,
 				5A101F58272ED7CE009E17D4 /* AddList.swift */,
+				5A101F762731B982009E17D4 /* UpdateList.swift */,
 				5A4169CC272D4D8400892FAD /* TableViewCell.swift */,
 				5A4169CD272D4D8400892FAD /* TableViewCell.xib */,
 				5A393C1E272C779E00BA7779 /* Main.storyboard */,
@@ -153,6 +156,7 @@
 			files = (
 				5A4169CE272D4D8400892FAD /* TableViewCell.swift in Sources */,
 				5A393C1D272C779E00BA7779 /* ViewController.swift in Sources */,
+				5A101F772731B982009E17D4 /* UpdateList.swift in Sources */,
 				5A393C19272C779E00BA7779 /* AppDelegate.swift in Sources */,
 				5A101F59272ED7CE009E17D4 /* AddList.swift in Sources */,
 				5A393C1B272C779E00BA7779 /* SceneDelegate.swift in Sources */,

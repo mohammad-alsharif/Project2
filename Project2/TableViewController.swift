@@ -7,57 +7,63 @@
 
 import UIKit
 
+// Creat a Struct
 struct Task {
     var title : String
 }
 
+// Creat a Class
 class List {
     var items = [Task]()
 }
 
-class TableViewController: UITableViewController, AddListDelegate {
-    func addNewList(list: String) {
-        print("new list : \(list)")
+class TableViewController: UITableViewController, UpdateListDelegate {
+    
+    // Creat a function To do the update item
+    func updateList(updateName: String, index: Int) {
+        list.items[index].title = updateName
+        tableView.reloadData()
     }
     
-    
+    var oneIndex = 0
     var list = List()
     
-    var isEmptyList = false
     override func viewWillAppear(_ animated: Bool) {
+        
         tableView.reloadData()
-        print(list.items)
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "ListID")
-        tableView.rowHeight = 70
+        tableView.rowHeight = 50
     }
 
     // MARK: - Table view data source
+    
 
+    // A function that returns the number of sections
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
+    // It is used to determine the number of rows or cells in each group
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        
-//            tableView.isUserInteractionEnabled = false
             return list.items.count
     }
 
-    
+    // Creat a function To do the Delete item
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        // Func Delete item
         if editingStyle == UITableViewCell.EditingStyle.delete {
                 list.items.remove(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListID", for: indexPath) as! TableViewCell
@@ -67,37 +73,21 @@ class TableViewController: UITableViewController, AddListDelegate {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("User Select : \(indexPath.row)")
+        oneIndex = indexPath.row
+        
+        let updateVC = storyboard?.instantiateViewController(withIdentifier: "updateID") as! UbdateList
+        updateVC.ubdating = list.items[indexPath.row].title
+        updateVC.delegate = self
+        updateVC.currentPosetion = indexPath.row
+        navigationController?.show(updateVC, sender: nil)
+    }
+    
+    // Creat a Button To Add List
     @IBAction func Add(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "addSegue", sender: self)
     }
-    
-    
-    
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     
     // MARK: - Navigation
