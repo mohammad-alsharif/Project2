@@ -35,3 +35,8 @@ In the main code, I created a function called updateList that takes the value pa
 - Deleting : 
 
 In the table I used ‫“‬UITableViewCell.EditingStyle.delete‫”‬ to delete the row selected by the user
+
+### Upcomming Feature :
+Chick List
+Sort the items
+Add Date Picker
